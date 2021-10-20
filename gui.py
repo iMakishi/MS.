@@ -13,7 +13,7 @@ from main import customizeSettings
 
 from main import releaseNotes
 from main import reportProblem
-from main import aboutApplication
+from main import appAbout
 
 from main import randomChoice
 from main import playChoice
@@ -115,7 +115,7 @@ class GUI:
         # Help Section ---> About
         helpmenu.add_separator()
         helpmenu.add_command(label = "About",
-            command = lambda: aboutApplication(self)
+            command = lambda: appAbout(self)
         )
 
         "--------------------------------------------------"
@@ -218,6 +218,7 @@ class GUI:
 
 # Program Execution
 
-root = Tk()
-AppGui = GUI(root)
-root.mainloop()
+if __name__ == '__main__':
+    root = Tk()
+    AppGui = GUI(root)
+    root.mainloop()
