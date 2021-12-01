@@ -20,7 +20,7 @@ from main import playChoice
 
 # MAIN
 
-class GUI:
+class MAIN:
     def __init__(self, master):
         self.master = master
 
@@ -134,7 +134,7 @@ class GUI:
         )
         self.appTitleLabel.pack(
             side = TOP,
-            pady = 5,
+            pady = (10,0),
             ipadx = 250
         )
 
@@ -220,5 +220,5 @@ class GUI:
 
 if __name__ == '__main__':
     root = Tk()
-    AppGui = GUI(root)
+    AppGui = MAIN(root)
     root.mainloop()
