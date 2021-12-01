@@ -46,13 +46,12 @@ def releaseNotes(self):
     "------------------------------------------------------"
 
     # Window bar
-    #releaseNotesWindow.overrideredirect(True)
-    releaseNotesWindow.title("About")
-    releaseNotesWindow.resizable(0, 0)
+    releaseNotesWindow.title("Release Notes")
+    #releaseNotesWindow.resizable(0, 0)
 
     # Window size and position
-    w = 400 # Width for the Tk window.
-    h = 525 # Height for the Tk window.
+    w = 450 # Width for the Tk window.
+    h = 550 # Height for the Tk window.
 
     ws = releaseNotesWindow.winfo_screenwidth() # Width of the screen.
     hs = releaseNotesWindow.winfo_screenheight() # Height of the screen.
@@ -65,42 +64,33 @@ def releaseNotes(self):
     releaseNotesWindow.geometry('%dx%d+%d+%d' % (w, h, x, y))
 
     # Window background color
-    releaseNotesWindow.configure(bg = "white")
+    releaseNotesWindow.configure(bg = "black")
 
     " Top Frame -------------------------------------------"
 
     topFrame = Frame(releaseNotesWindow, bg = "white")
     topFrame.pack()
 
-
-    releaseNotesTitleLabel = Label(topFrame, text = "Release Notes",
+    # Window title ------------------------------ #
+    windowTitleLabel = Label(topFrame, text = "Release Notes",
         bg = "white",
-        font = ("Courier New", 30, "underline")
+        font = ("Courier New", 15, "underline")
     )
-    releaseNotesTitleLabel.pack(
-        pady = 5
+    windowTitleLabel.pack(
+        pady = (10,5)
     )
 
     " Middle Frame ----------------------------------------"
 
-    middleFrame = Frame(releaseNotesWindow, bg = "white")
-    middleFrame.pack()
+    middleFrame = Frame(releaseNotesWindow, bg = "green")
+    middleFrame.pack(fill = BOTH)
 
-    releaseNotesText = Text(middleFrame,
-        relief = FLAT)
-    releaseNotesText.configure(state = "disabled")
-    releaseNotesText.pack(
-        side = LEFT,
-        padx = 10,
-        pady = 10
-    )
+    # Text 
+    
 
-    textScrollbar = Scrollbar(middleFrame, orient = VERTICAL,
-        command = releaseNotesText.yview()
-    )
-    textScrollbar.pack(
-        side = RIGHT
-    )
+    # Right side text Scrollbar
+
+
 
     " Bottom Frame ----------------------------------------"
 
@@ -115,9 +105,20 @@ def releaseNotes(self):
         command = lambda: close(releaseNotesWindow)
     )
     closeButton.pack(
-        side = BOTTOM,
+        side = TOP,
         pady = (10, 10),
         ipadx = 61,
+        ipady = 5
+    )
+
+    # License label ---------------------------------- #
+    licenseLabel = Label(bottomFrame, text = "@2021 by Maximiliano E. Lutz",
+        bg = "white",
+        font = ("Courier New", 10, "underline")
+    )
+    licenseLabel.pack(
+        side = BOTTOM,
+        pady = 5,
         ipady = 5
     )
 
