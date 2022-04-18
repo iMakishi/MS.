@@ -1,6 +1,0 @@
-Update 20/10/2021
-PATH DIRECTORY STORAGE
-
-Previously, when attempting to randomize between all the movies and the respective folders, the user was asked to access the main folder in which the movies could be found, again and again all over, each time the application started.
-That's in the past now. Now, the user will only have to choose the folder in which his movies are, the first time they start the application. After that one time, that directory path will be stored indefinitely and the user will be able to close and reopen the application without the need to choose the folder ever again.
-If the user decided to change folders for any reason, he would have to access the "File" submenu, and go to "Select Folder..." in order to change the directory in which the program will look for those movies.
