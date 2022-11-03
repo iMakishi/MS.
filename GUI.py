@@ -1,14 +1,11 @@
 '------------------------- STANDARD LIBRARY IMPORTS -------------------------'
 
-import re
 from tkinter import *
-from turtle import width
 
 '------------------------- LOCAL IMPORTS -------------------------'
 
 from functions import close
 from functions import selectFolder
-from functions import storeFolder
 from functions import randomize
 
 '------------------------- LOGIC -------------------------'
@@ -20,7 +17,7 @@ class MainWindow:
         '--------------------------------------------------'
 
         # Window bar
-        master.title('!MS')
+        master.title('MOVIƎ RAN|SEL')
         master.resizable(0, 0)
 
         # Window size and position
@@ -63,7 +60,7 @@ class MainWindow:
 
         # # Select Folder (File Section (Menubar))
         filemenu.add_command(label = "Select Folder...  ",
-                             command = lambda: selectFolder())
+                             command = lambda: selectFolder(self))
 
         # # Preferences (File Section (Menubar))
         preferences_submenu = Menu(filemenu,
@@ -75,10 +72,6 @@ class MainWindow:
 
         # # # Filter (Preferences (File Section (Menubar)))
         preferences_submenu.add_command(label = "Filters",
-                                        command = None)
-
-        # # # Settings (Preferences (File Section (Menubar)))
-        preferences_submenu.add_command(label = "Settings",
                                         command = None)
 
         # # Quit (File Section (Menubar))
@@ -141,8 +134,8 @@ class MainWindow:
 
         # App Title (Inferior Top Frame Section)
         appTitle = Label(internalTopFrame,
-                         text = " MOVIƎSELECT ",
-                         font = ('Overpass', 24, 'bold underline'),
+                         text = " MOVIE RANSEL ",
+                         font = ('Overpass', 24, 'italic bold underline'),
                          bg = 'white')
 
         appTitle.pack(side = BOTTOM)
@@ -151,12 +144,12 @@ class MainWindow:
         self.resultLabel = Label(TopFrame,
                             text = ". . .",
                             font = ('Overpass', 14, 'bold'),
-                            bg = 'white')
+                            bg = 'white',)
 
         self.resultLabel.pack(side = BOTTOM,
                          padx = 10,
                          pady = 5,
-                         ipadx = window_width)
+                         ipadx = window_width,)
 
         '------------------------- Middle Frame Section -------------------------'
 
@@ -224,6 +217,9 @@ class MainWindow:
 
         signatureLabel.pack(side = BOTTOM,
                             ipady = 5)
+        
+    def FiltersWindow(self):
+        self.FiltersWindow = Toplevel(self.master)
 
 '--------------------------------------------------'
 
