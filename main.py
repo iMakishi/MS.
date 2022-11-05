@@ -1,19 +1,18 @@
-                        # # # # # Movie RAN|SEL # # # # #                    
+# ------------------------- Standard Library Imports ------------------------- #
 
-'------------------------- STANDARD LIBRARY IMPORTS -------------------------'
-
+import tkinter as tk
 from tkinter import *
 
-'------------------------- LOCAL IMPORTS -------------------------'
+# ------------------------- Local Imports ------------------------- #
 
-from GUI import MainWindow
+from gui import mainWindow
 
-'------------------------- LOGIC -------------------------'
+# ------------------------- Logic ------------------------- #
 
 def main():
-    root = Tk()
-    app = MainWindow(root)
+    root = tk.Tk
+    mainWindow(root)
     root.mainloop()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
