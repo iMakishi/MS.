@@ -1,7 +1,7 @@
 # ------------------------- Standard Library Imports ------------------------- #
 
-import tkinter as tk
-from tkinter import *
+import sys
+from PyQt5.QtWidgets import QApplication
 
 # ------------------------- Local Imports ------------------------- #
 
@@ -10,9 +10,10 @@ from gui import mainWindow
 # ------------------------- Logic ------------------------- #
 
 def main():
-    root = tk.Tk
-    mainWindow(root)
-    root.mainloop()
+    app = QApplication(sys.argv)
+    myApp = mainWindow()
+    myApp.show()
+    sys.exit(app.exec_())
 
 if __name__ == "__main__":
     main()
